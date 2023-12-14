@@ -10,6 +10,7 @@ export class ServersComponent {
   allowNewServer = false;
   serverCrationStatus: String = 'No server was created!';
   serverName: String = "Testserver";
+  serverCreated: Boolean = false;
 
   constructor() {
     /* Constructor is just a method executed by the point of time this component is created by Angular */
@@ -21,6 +22,7 @@ export class ServersComponent {
   ngOnInit() {}
   onCreateServer() {
     /* When namig DeclareFunctionStmt, the On prefix means that this is triggered by something from the template */
+    this.serverCreated = true;
     this.serverCrationStatus =  "The server was created! Name is " + this.serverName
   }
 

@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import { DUMMY_USERS } from './dummy-users';
@@ -14,7 +14,6 @@ import { TasksComponent } from './tasks/tasks.component';
 export class AppComponent {
   users = DUMMY_USERS;
   selectedUserId?: string;
-  isNewTaskActive: boolean = false;
 
   get selectedUser() {
     return this.users.find((user) => user.id === this.selectedUserId)!;
@@ -23,10 +22,6 @@ export class AppComponent {
   onSelectUser(id: string) {
     // console.log('Selected user with id ' + id);
     this.selectedUserId = id;
-    this.isNewTaskActive = false;
   }
 
-  onAddTask(status: boolean){
-    this.isNewTaskActive = true;
-  }
 }

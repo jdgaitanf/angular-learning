@@ -12,7 +12,8 @@ import { NewTaskComponent } from './new-task/new-task.component';
 export class TasksComponent {
   @Input({ required: true }) name!: string;
   @Input({ required: true }) userId!: string;
-  @Output() newTask = new EventEmitter<boolean>();
+
+  //@Output() newTask = new EventEmitter<boolean>();
   //@Input({ required: true }) status: boolean = false;
   isAddingTask = false;
 
@@ -53,4 +54,7 @@ export class TasksComponent {
   onStartAddTask() {
     this.isAddingTask = true;
   }
+  onClose(isOpen: boolean){
+    this.isAddingTask = isOpen;
+  };
 }
